@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import apiCalls from '../apiCalls.js'
 
 class App extends Component {
   constructor() {
@@ -7,6 +8,9 @@ class App extends Component {
     this.state= {
       reservations: []
     }
+  }
+  componentDidMount() {
+    
   }
   render() {
     return (
