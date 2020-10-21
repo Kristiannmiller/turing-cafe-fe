@@ -4,7 +4,7 @@ import './ReservationCard.css';
 const ReservationCard = ( reservation ) => {
   return (
     <section className="resCard">
-      <h1>name: {reservation.name}</h1>
+      <h1>{reservation.name}</h1>
       <h2>date: {reservation.date}</h2>
       <h3>time: {reservation.time}</h3>
       <h4>guests: {reservation.number}</h4>
