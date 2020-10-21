@@ -15,7 +15,17 @@ class App extends Component {
     this.setState({reservations: allReservations})
   }
   render() {
-    
+    const cards = this.state.reservations.map((reservation, i) => {
+      return (
+      <ReservationCard
+        key={i}
+        name={reservation.name}
+        date={reservation.date}
+        time={reservation.time}
+        number={reservation.number}
+      />)
+
+    })
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
@@ -23,7 +33,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-
+          {cards}
         </div>
       </div>
     )
