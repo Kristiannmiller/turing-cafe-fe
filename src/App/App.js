@@ -9,8 +9,9 @@ class App extends Component {
       reservations: []
     }
   }
-  componentDidMount() {
-    
+  async componentDidMount() {
+    const allReservations = await apiCalls.getAllReservations()
+    this.setState({reservations: allReservations})
   }
   render() {
     return (
