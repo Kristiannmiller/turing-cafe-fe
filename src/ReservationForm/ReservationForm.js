@@ -11,14 +11,17 @@ class ReservationForm extends Component {
       number: ''
     }
   }
+  handleChange = (event) => {
+    this.setState( {[event.target.name]: event.target.value} )
+  }
   render() {
     return (
       <form onChange={this.handleChange}>
-        <input type="text" placeholder="name"/>
-        <input type="text" placeholder="date mm/dd"/>
-        <input type="text" placeholder="time h:mm"/>
-        <input type="number" min="1" placeholder="num. of guests"/>
-        <button>reserve</button>
+        <input name="name" type="text" placeholder="name"/>
+        <input name="date" type="text" placeholder="date mm/dd"/>
+        <input name="time" type="text" placeholder="time h:mm"/>
+        <input name="number" type="number" min="1" placeholder="num. of guests"/>
+        <button onClick={this.props.addRes}>reserve</button>
       </form>
     )
   }
