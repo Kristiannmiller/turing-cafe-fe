@@ -11,6 +11,14 @@ class App extends Component {
       reservations: []
     }
   }
+  addReservation = async (resInfo) => {
+    const newRes = await apiCalls.postReservation(resInfo)
+    if(newRes.id) {
+      this.setState( {reservations: [...this.state.reservations, newRes]} )
+    } else {
+      return newRes
+    }
+  }
   async componentDidMount() {
     const allReservations = await apiCalls.getAllReservations()
     this.setState({reservations: allReservations})
@@ -30,7 +38,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <ReservationForm />
+          <ReservationForm addRes={this.addReservation}/>
         </div>
         <div className='resy-container'>
           {cards}
