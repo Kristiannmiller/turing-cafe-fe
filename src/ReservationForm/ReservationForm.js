@@ -21,7 +21,7 @@ class ReservationForm extends Component {
         <input name="date" type="text" placeholder="date mm/dd"/>
         <input name="time" type="text" placeholder="time h:mm"/>
         <input name="number" type="number" min="1" placeholder="num. of guests"/>
-        <button onClick={this.props.addRes}>reserve</button>
+        <button onClick={() => this.props.addRes(this.state)}>Make Reservation</button>
       </form>
     )
   }
