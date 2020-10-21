@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import apiCalls from '../apiCalls.js'
+import ReservationCard from '../ReservationCard/ReservationCard.js'
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
     this.setState({reservations: allReservations})
   }
   render() {
+    
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
